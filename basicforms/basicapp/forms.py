@@ -1,5 +1,6 @@
 from django import forms
 from django.core import validators
+from basicapp.models
 
 class FormName(forms.Form):
     name = forms.CharField()
