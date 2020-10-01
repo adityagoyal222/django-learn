@@ -22,3 +22,15 @@ def users(request):
         else:
             print('ERROR FORM INVALID')
     return render(request, 'AppTwo/signup.html', context={'form':form})
+
+def users_new(request):
+    form = UserForm
+    
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return index(request)
+        else:
+            print('ERROR! FORM INVALID!')
+    return render(request, 'AppTwo/signup.html', context={'form':form})
