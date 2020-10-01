@@ -3,5 +3,8 @@
 {% block body_block %}
     <h1>WELCOME TO INDEX</h1>
     <H2>This is the index.html page showing.</H2>
+
+    <h1>{{ text|cut:"hello"}}</h1>
+    <h1>{{ number|add:"99" }}</h1>
 {% endblock body_block %}
     
