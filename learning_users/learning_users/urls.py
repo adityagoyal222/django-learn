@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^basic_app/', include('basic_app.urls')),
     path('admin/', admin.site.urls),
+    url(r'^logout/$', views.user_logout, name='logout'),
 ]
