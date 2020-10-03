@@ -20,5 +20,7 @@ from basic_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', views.IndexView.as_view(), name="index")
+    url(r'^$', views.IndexView.as_view(), name="index"),
+    url(r'^basic_app/', include('basic_app.urls'), name="basic_app")
+
 ]
