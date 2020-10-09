@@ -1,0 +1,33 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Users</title>
+    <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+</head>
+<body>
+    
+    {% if user_list %}
+        <table>
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </thead>
+            
+            {% for user in user_list %}
+                <tr>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    {% else %}
+        <p>NO USERS!</p>
+    {% endif %}
+        
+</body>
+</html>
